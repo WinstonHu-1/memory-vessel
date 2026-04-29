@@ -68,8 +68,42 @@ void draw() {
   line(1070,700,900,500);
   line(1180,700,950,500);
   line(1290,700,1000,500);
+  stroke(0);
+  strokeWeight(1);
+  fill(102,125,146);
+  bezier(200,600,500,650,700,650,1000,600);
+  noStroke();
+  beginShape();
+  vertex(200,600);
+  vertex(1000,600);
+  vertex(1025,500);
+  vertex(175,500);
+  endShape(CLOSE);
+  fill(177,134,69);
+  stroke(0);
+  strokeWeight(2);
+  beginShape();
+  vertex(210,450);
+  bezierVertex(134,452, 139,474,172,500);
+  bezierVertex(463,524,1050,550,1050,470);
+  
+  endShape(CLOSE);
   
   
-  //
+  
+   // mouse crosshair + coordinates
+  stroke(255);
+  strokeWeight(1);
+  line(mouseX, 0, mouseX, height);   // vertical line
+  line(0, mouseY, width, mouseY);    // horizontal line
+  
+  fill(255);
+  noStroke();
+  textSize(14);
+  // nudge label so it doesn't run off the right/bottom edges
+  int tx = (mouseX > width  - 80) ? mouseX - 80 : mouseX + 8;
+  int ty = (mouseY > height - 10) ? mouseY - 8  : mouseY + 16;
+  text("(" + mouseX + ", " + mouseY + ")", tx, ty);
+  
   
 }
