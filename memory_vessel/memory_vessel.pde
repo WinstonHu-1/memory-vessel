@@ -1,3 +1,5 @@
+int y1 = 450;
+
 void setup() {
   size(1200, 700);
 }
@@ -72,6 +74,9 @@ void draw() {
   strokeWeight(1);
   fill(102,125,146);
   bezier(200,600,500,650,700,650,1000,600);
+  
+  
+  
   noStroke();
   beginShape();
   vertex(200,600);
@@ -79,31 +84,94 @@ void draw() {
   vertex(1025,500);
   vertex(175,500);
   endShape(CLOSE);
+  
+  
   fill(177,134,69);
   stroke(0);
   strokeWeight(2);
   beginShape();
-  vertex(210,450);
-  bezierVertex(134,452, 139,474,172,500);
-  bezierVertex(463,524,1050,550,1050,470);
-  
+  vertex(101,464);
+  bezierVertex(130,550,1060,550,1100,464);
   endShape(CLOSE);
+  ellipse(600,465,1000,100);
+  fill(18,0,87);
+  ellipse(600,465,950,80);
+  fill(177,134,69);
+  stroke(177,134,69);
+  strokeWeight(10);
+  rect(210,437,780,5,5);
+  rect(125,460,950,5,5);
+  rect(153,480,900,5,5);
+  rect(427,423,5,80);
+  rect(507,423,5,80);
+  rect(587,423,5,80);
+  rect(347,430,5,80);
+  rect(247,435,5,70);
+  rect(667,423,5,80);
+  rect(747,423,5,80);
+  rect(827,430,5,80);
+  rect(907,430,5,80);
+  
+  smoke(300,y1);
+  y1 = y1-5;
+  if( y1 <10 ) {
+    y1= 450;
+  }
   
   
   
-   // mouse crosshair + coordinates
-  stroke(255);
-  strokeWeight(1);
-  line(mouseX, 0, mouseX, height);   // vertical line
-  line(0, mouseY, width, mouseY);    // horizontal line
-  
-  fill(255);
+}
+
+void smoke(int x, int y) {
+  fill(198,193,192,50);
   noStroke();
-  textSize(14);
-  // nudge label so it doesn't run off the right/bottom edges
-  int tx = (mouseX > width  - 80) ? mouseX - 80 : mouseX + 8;
-  int ty = (mouseY > height - 10) ? mouseY - 8  : mouseY + 16;
-  text("(" + mouseX + ", " + mouseY + ")", tx, ty);
+  ellipse(x,y,100,50);
+  ellipse(x+52, y+ 40, 50, 100);
+  ellipse(x-52, y+ 20, 50, 100);
+  ellipse(x+10, Y+10, 100,50);
+  ellipse(x+22, y+ 10, 50, 100);
+  ellipse(x-42, y+ 50, 50, 100);
+  ellipse(x+30, Y+20, 100,50);
+  
+  ellipse(x+152, y+ 40, 50, 100);
+  ellipse(x-152, y+ 20, 50, 100);
+  ellipse(x+110, Y+10, 100,50);
+  ellipse(x+122, y+ 10, 50, 100);
+  ellipse(x-142, y+ 50, 50, 100);
+  ellipse(x+130, Y+20, 100,50);
+  
+  ellipse(x+252, y+ 40, 50, 100);
+ 
+  ellipse(x+210, Y+10, 100,50);
+  ellipse(x+222, y+ 10, 50, 100);
+  
+  ellipse(x+230, Y+20, 100,50);
   
   
+  ellipse(x+352, y+ 40, 50, 100);
+ 
+  ellipse(x+310, Y+10, 100,50);
+  ellipse(x+322, y+ 10, 50, 100);
+  
+  ellipse(x+330, Y+20, 100,50);
+  
+  
+  
+  ellipse(x+452, y+ 40, 50, 100);
+ 
+  ellipse(x+410, Y+10, 100,50);
+  ellipse(x+422, y+ 10, 50, 100);
+  
+  ellipse(x+430, Y+20, 100,50);
+  
+  
+  ellipse(x+552, y+ 40, 50, 100);
+  ellipse(x+510, Y+10, 100,50);
+  ellipse(x+522, y+ 10, 50, 100);
+  ellipse(x+530, Y+20, 100,50);
+  ellipse(x+252, y+ 40, 50, 100);
+ 
+  ellipse(x+560, Y+10, 100,50);
+  ellipse(x+582, y+ 10, 50, 100);
+  ellipse(x+590, Y+20, 100,50);
 }
